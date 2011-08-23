@@ -3,14 +3,14 @@
 //  pachitest2
 //
 //  Created by elanz on 8/22/11.
-//  Copyright __MyCompanyName__ 2011. All rights reserved.
+//  Copyright 200Monkeys 2011. All rights reserved.
 //
 
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "MainGameLayer.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -55,7 +55,7 @@
 	// Init the View Controller
 	viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
 	viewController.wantsFullScreenLayout = YES;
-	
+    
 	//
 	// Create the EAGLView manually
 	//  1. Create a RGB565 format. Alternative: RGBA8
@@ -83,11 +83,11 @@
 	// By default, this template only supports Landscape orientations.
 	// Edit the RootViewController.m file to edit the supported orientations.
 	//
-#if GAME_AUTOROTATION == kGameAutorotationUIViewController
+//#if GAME_AUTOROTATION == kGameAutorotationUIViewController
 	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
-#else
-	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
-#endif
+//#else
+//	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
+//#endif
 	
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
@@ -111,7 +111,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [MainGameLayer scene]];
 }
 
 
