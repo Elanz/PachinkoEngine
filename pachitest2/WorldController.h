@@ -20,6 +20,7 @@
 }
 
 @property (nonatomic, readwrite) b2World* World;
+@property (nonatomic, readwrite) b2Body* Background;
 
 - (void) createWorldWithLayer:(CCLayer*)mainGameLayer;
 - (void) drawDebug;

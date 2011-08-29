@@ -13,6 +13,7 @@
 @implementation WorldController
 
 @synthesize World = world;
+@synthesize Background = backBody;
 
 - (void) createWorldWithLayer:(CCLayer*)mainGameLayer
 {
@@ -79,7 +80,7 @@
     
     backBodyDef.userData = sprite;
     
-    b2Body* backBody = world->CreateBody(&backBodyDef);
+    backBody = world->CreateBody(&backBodyDef);
     [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"back.plist"];
     [[GB2ShapeCache sharedShapeCache] addFixturesToBody:backBody forShapeName:@"back"];
     [[GB2ShapeCache sharedShapeCache] addFixturesToBody:backBody forShapeName:@"sensors"];

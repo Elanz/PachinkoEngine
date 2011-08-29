@@ -20,15 +20,17 @@ enum {
 	kTagAnimation1 = 1,
 };
 
-@interface bodyContainer : NSObject
+@interface BallContainer : NSObject
 
 @property (nonatomic, readwrite) b2Body * body;
+@property (nonatomic, readwrite) BOOL destroy;
     
 @end
 
-@implementation bodyContainer
+@implementation BallContainer
 
 @synthesize body;
+@synthesize destroy;
 
 @end
 
@@ -83,8 +85,9 @@ enum {
 	body->CreateFixture(&fixtureDef);
     body->ApplyLinearImpulse(pendingBallForce, body->GetWorldCenter());
     
-    bodyContainer * container = [[bodyContainer alloc] init];
+    BallContainer * container = [[[BallContainer alloc] init] autorelease];
     container.body = body;
+    container.destroy = NO;
     
     [ballArray addObject:container];
 }
@@ -95,15 +98,58 @@ enum {
     ballLaunchPending = YES;
 }
 
-- (void) updateBalls
+- (void) updateCollision
 {
-    NSLog(@"count = %d", [ballArray count]); 
-    
+    for (BallContainer * container in ballArray)
+    {
+        if (container.destroy) continue;
+        
+        b2Body * ball = container.body;
+        b2ContactEdge * edge = ball->GetContactList();
+        while (edge)
+        {
+            if (edge->contact->IsTouching() && (edge->contact->GetFixtureA()->IsSensor() || edge->contact->GetFixtureB()->IsSensor()))
+            {
+                container.destroy = YES;
+                break;
+            }
+            
+            edge = edge->next;
+        }
+    }
+}
+
+- (void) cleanUp
+{
+    CCSpriteBatchNode *batch = (CCSpriteBatchNode*) [mainGameLayer getChildByTag:kTagBatchNode];
+    NSMutableArray * toRemove = [NSMutableArray array];
+    for (BallContainer * container in ballArray)
+    {
+        if (container.destroy)
+        {
+            [toRemove addObject:container];
+            [batch removeChild:(CCSprite *)container.body->GetUserData() cleanup:YES];
+            theWorld.World->DestroyBody(container.body);
+        }
+    }
+    [ballArray removeObjectsInArray:toRemove];
+}
+
+- (void) updatePending
+{
     if (ballLaunchPending)
     {
         [self processPendingBalls];
         ballLaunchPending = NO;
     }
+}
+
+- (void) updateBalls
+{
+    NSLog(@"count = %d", [ballArray count]);
+    [self updateCollision];
+    [self cleanUp];
+    [self updatePending];    
 }
 
 - (void) dealloc
