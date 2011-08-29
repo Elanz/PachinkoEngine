@@ -156,11 +156,13 @@
 		723E33CA1402D43100CFB379 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 723E33C91402D43100CFB379 /* AppDelegate.mm */; };
 		723E33CD1402D43100CFB379 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723E33CC1402D43100CFB379 /* RootViewController.m */; };
 		723E33D01402D43100CFB379 /* MainGameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 723E33CF1402D43100CFB379 /* MainGameLayer.mm */; };
-		723E33EC1402E92D00CFB379 /* back.plist in Resources */ = {isa = PBXBuildFile; fileRef = 723E33EB1402E92D00CFB379 /* back.plist */; };
 		723E33F01402EAC900CFB379 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 723E33EF1402EAC900CFB379 /* GB2ShapeCache.mm */; };
 		723E33F21402EE9700CFB379 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 723E33F11402EE9700CFB379 /* back.png */; };
 		723E33F41402EEAA00CFB379 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 723E33F31402EEAA00CFB379 /* ball.png */; };
 		723E35EF1402F42A00CFB379 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 723E35EE1402F42A00CFB379 /* GLES-Render.mm */; };
+		727EA6D5140BE002003C97A6 /* ballController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 727EA6D4140BE002003C97A6 /* ballController.mm */; };
+		727EA6D9140BE037003C97A6 /* WorldController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 727EA6D8140BE037003C97A6 /* WorldController.mm */; };
+		727EA755140C05DC003C97A6 /* back.plist in Resources */ = {isa = PBXBuildFile; fileRef = 727EA754140C05DC003C97A6 /* back.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -471,13 +473,17 @@
 		723E33CE1402D43100CFB379 /* MainGameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainGameLayer.h; sourceTree = "<group>"; };
 		723E33CF1402D43100CFB379 /* MainGameLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainGameLayer.mm; sourceTree = "<group>"; };
 		723E33D41402D43100CFB379 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		723E33EB1402E92D00CFB379 /* back.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = back.plist; sourceTree = "<group>"; };
 		723E33EE1402EAC900CFB379 /* GB2ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2ShapeCache.h; sourceTree = "<group>"; };
 		723E33EF1402EAC900CFB379 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2ShapeCache.mm; sourceTree = "<group>"; };
 		723E33F11402EE9700CFB379 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Resources/back.png; sourceTree = "<group>"; };
 		723E33F31402EEAA00CFB379 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = Resources/ball.png; sourceTree = "<group>"; };
 		723E35ED1402F42900CFB379 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		723E35EE1402F42A00CFB379 /* GLES-Render.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
+		727EA6D3140BE002003C97A6 /* ballController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ballController.h; sourceTree = "<group>"; };
+		727EA6D4140BE002003C97A6 /* ballController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ballController.mm; sourceTree = "<group>"; };
+		727EA6D7140BE037003C97A6 /* WorldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldController.h; sourceTree = "<group>"; };
+		727EA6D8140BE037003C97A6 /* WorldController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WorldController.mm; sourceTree = "<group>"; };
+		727EA754140C05DC003C97A6 /* back.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = back.plist; path = Resources/back.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -534,17 +540,15 @@
 		723E32031402D42F00CFB379 /* pachitest2 */ = {
 			isa = PBXGroup;
 			children = (
-				723E35ED1402F42900CFB379 /* GLES-Render.h */,
-				723E35EE1402F42A00CFB379 /* GLES-Render.mm */,
-				723E33EE1402EAC900CFB379 /* GB2ShapeCache.h */,
-				723E33EF1402EAC900CFB379 /* GB2ShapeCache.mm */,
-				723E33C81402D43100CFB379 /* AppDelegate.h */,
-				723E33C91402D43100CFB379 /* AppDelegate.mm */,
-				723E33CB1402D43100CFB379 /* RootViewController.h */,
-				723E33CC1402D43100CFB379 /* RootViewController.m */,
+				7278B58F1403F9EF00640E42 /* Delegate */,
+				7278B4AC1403F43000640E42 /* PhysicsLoader */,
+				7278B4AA1403F41700640E42 /* DebugRendering */,
+				727EA6D3140BE002003C97A6 /* ballController.h */,
+				727EA6D4140BE002003C97A6 /* ballController.mm */,
 				723E33CE1402D43100CFB379 /* MainGameLayer.h */,
 				723E33CF1402D43100CFB379 /* MainGameLayer.mm */,
-				723E33D41402D43100CFB379 /* GameConfig.h */,
+				727EA6D7140BE037003C97A6 /* WorldController.h */,
+				727EA6D8140BE037003C97A6 /* WorldController.mm */,
 				723E32041402D42F00CFB379 /* Resources */,
 				723E32181402D42F00CFB379 /* libs */,
 				723E33C41402D43100CFB379 /* Supporting Files */,
@@ -555,9 +559,9 @@
 		723E32041402D42F00CFB379 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				727EA754140C05DC003C97A6 /* back.plist */,
 				723E33F31402EEAA00CFB379 /* ball.png */,
 				723E33F11402EE9700CFB379 /* back.png */,
-				723E33EB1402E92D00CFB379 /* back.plist */,
 				723E32071402D42F00CFB379 /* fps_images.png */,
 				723E32091402D42F00CFB379 /* Icon-72.png */,
 				723E320B1402D42F00CFB379 /* Icon-Small-50.png */,
@@ -1011,6 +1015,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7278B4AA1403F41700640E42 /* DebugRendering */ = {
+			isa = PBXGroup;
+			children = (
+				723E35ED1402F42900CFB379 /* GLES-Render.h */,
+				723E35EE1402F42A00CFB379 /* GLES-Render.mm */,
+			);
+			name = DebugRendering;
+			sourceTree = "<group>";
+		};
+		7278B4AC1403F43000640E42 /* PhysicsLoader */ = {
+			isa = PBXGroup;
+			children = (
+				723E33EE1402EAC900CFB379 /* GB2ShapeCache.h */,
+				723E33EF1402EAC900CFB379 /* GB2ShapeCache.mm */,
+			);
+			name = PhysicsLoader;
+			sourceTree = "<group>";
+		};
+		7278B58F1403F9EF00640E42 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				723E33C81402D43100CFB379 /* AppDelegate.h */,
+				723E33C91402D43100CFB379 /* AppDelegate.mm */,
+				723E33CB1402D43100CFB379 /* RootViewController.h */,
+				723E33CC1402D43100CFB379 /* RootViewController.m */,
+				723E33D41402D43100CFB379 /* GameConfig.h */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1070,9 +1104,9 @@
 				723E32121402D42F00CFB379 /* Icon.png in Resources */,
 				723E32141402D42F00CFB379 /* Icon@2x.png in Resources */,
 				723E32171402D42F00CFB379 /* iTunesArtwork in Resources */,
-				723E33EC1402E92D00CFB379 /* back.plist in Resources */,
 				723E33F21402EE9700CFB379 /* back.png in Resources */,
 				723E33F41402EEAA00CFB379 /* ball.png in Resources */,
+				727EA755140C05DC003C97A6 /* back.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1218,6 +1252,8 @@
 				723E33D01402D43100CFB379 /* MainGameLayer.mm in Sources */,
 				723E33F01402EAC900CFB379 /* GB2ShapeCache.mm in Sources */,
 				723E35EF1402F42A00CFB379 /* GLES-Render.mm in Sources */,
+				727EA6D5140BE002003C97A6 /* ballController.mm in Sources */,
+				727EA6D9140BE037003C97A6 /* WorldController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,6 +1305,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = pachitest2/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = pachitest2/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1285,6 +1322,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = pachitest2/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = pachitest2/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
