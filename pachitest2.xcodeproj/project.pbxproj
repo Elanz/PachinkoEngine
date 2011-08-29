@@ -160,9 +160,11 @@
 		723E33F21402EE9700CFB379 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 723E33F11402EE9700CFB379 /* back.png */; };
 		723E33F41402EEAA00CFB379 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 723E33F31402EEAA00CFB379 /* ball.png */; };
 		723E35EF1402F42A00CFB379 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 723E35EE1402F42A00CFB379 /* GLES-Render.mm */; };
-		727EA6D5140BE002003C97A6 /* ballController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 727EA6D4140BE002003C97A6 /* ballController.mm */; };
+		727EA6D5140BE002003C97A6 /* BallController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 727EA6D4140BE002003C97A6 /* BallController.mm */; };
 		727EA6D9140BE037003C97A6 /* WorldController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 727EA6D8140BE037003C97A6 /* WorldController.mm */; };
 		727EA755140C05DC003C97A6 /* back.plist in Resources */ = {isa = PBXBuildFile; fileRef = 727EA754140C05DC003C97A6 /* back.plist */; };
+		727EA760140C1656003C97A6 /* HandleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 727EA75F140C1656003C97A6 /* HandleController.mm */; };
+		727EA763140C1960003C97A6 /* handle.png in Resources */ = {isa = PBXBuildFile; fileRef = 727EA762140C1960003C97A6 /* handle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -479,11 +481,14 @@
 		723E33F31402EEAA00CFB379 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = Resources/ball.png; sourceTree = "<group>"; };
 		723E35ED1402F42900CFB379 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		723E35EE1402F42A00CFB379 /* GLES-Render.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
-		727EA6D3140BE002003C97A6 /* ballController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ballController.h; sourceTree = "<group>"; };
-		727EA6D4140BE002003C97A6 /* ballController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ballController.mm; sourceTree = "<group>"; };
+		727EA6D3140BE002003C97A6 /* BallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallController.h; sourceTree = "<group>"; };
+		727EA6D4140BE002003C97A6 /* BallController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BallController.mm; sourceTree = "<group>"; };
 		727EA6D7140BE037003C97A6 /* WorldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldController.h; sourceTree = "<group>"; };
 		727EA6D8140BE037003C97A6 /* WorldController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WorldController.mm; sourceTree = "<group>"; };
 		727EA754140C05DC003C97A6 /* back.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = back.plist; path = Resources/back.plist; sourceTree = "<group>"; };
+		727EA75E140C1656003C97A6 /* HandleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleController.h; sourceTree = "<group>"; };
+		727EA75F140C1656003C97A6 /* HandleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HandleController.mm; sourceTree = "<group>"; };
+		727EA762140C1960003C97A6 /* handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = handle.png; path = Resources/handle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,8 +548,10 @@
 				7278B58F1403F9EF00640E42 /* Delegate */,
 				7278B4AC1403F43000640E42 /* PhysicsLoader */,
 				7278B4AA1403F41700640E42 /* DebugRendering */,
-				727EA6D3140BE002003C97A6 /* ballController.h */,
-				727EA6D4140BE002003C97A6 /* ballController.mm */,
+				727EA6D3140BE002003C97A6 /* BallController.h */,
+				727EA6D4140BE002003C97A6 /* BallController.mm */,
+				727EA75E140C1656003C97A6 /* HandleController.h */,
+				727EA75F140C1656003C97A6 /* HandleController.mm */,
 				723E33CE1402D43100CFB379 /* MainGameLayer.h */,
 				723E33CF1402D43100CFB379 /* MainGameLayer.mm */,
 				727EA6D7140BE037003C97A6 /* WorldController.h */,
@@ -559,6 +566,7 @@
 		723E32041402D42F00CFB379 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				727EA762140C1960003C97A6 /* handle.png */,
 				727EA754140C05DC003C97A6 /* back.plist */,
 				723E33F31402EEAA00CFB379 /* ball.png */,
 				723E33F11402EE9700CFB379 /* back.png */,
@@ -1107,6 +1115,7 @@
 				723E33F21402EE9700CFB379 /* back.png in Resources */,
 				723E33F41402EEAA00CFB379 /* ball.png in Resources */,
 				727EA755140C05DC003C97A6 /* back.plist in Resources */,
+				727EA763140C1960003C97A6 /* handle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1252,8 +1261,9 @@
 				723E33D01402D43100CFB379 /* MainGameLayer.mm in Sources */,
 				723E33F01402EAC900CFB379 /* GB2ShapeCache.mm in Sources */,
 				723E35EF1402F42A00CFB379 /* GLES-Render.mm in Sources */,
-				727EA6D5140BE002003C97A6 /* ballController.mm in Sources */,
+				727EA6D5140BE002003C97A6 /* BallController.mm in Sources */,
 				727EA6D9140BE037003C97A6 /* WorldController.mm in Sources */,
+				727EA760140C1656003C97A6 /* HandleController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
