@@ -11,6 +11,7 @@
 #import "MainGameLayer.h"
 #import "WorldController.h"
 #import "BallController.h"
+#import "HandleController.h"
 #import "Box2D.h"
 
 @implementation MainGameLayer
@@ -36,11 +37,16 @@
         //create the world controller
         theWorld = [[WorldController alloc] init];
         [theWorld createWorldWithLayer:self];
-
+        
+        //create the handle controller
+        theHandle = [[HandleController alloc] initWithLayer:self andWorld:theWorld];
+        
         //create the ball controller
         theBallController = [[BallController alloc] initWithLayer:self andWorld:theWorld];
-    				
+        
 		[self schedule: @selector(tick:)];
+        [self schedule:@selector(launchBall) interval:1.0];
+        
 	}
 	return self;
 }
@@ -50,6 +56,15 @@
     [theWorld drawDebug];
 }
 
+- (void) launchBall
+{
+    if (theHandle.LaunchForce < 0.1) return;
+    
+    b2Vec2 force;
+    force.Set(theHandle.LaunchForce, 0.0f);
+    [theBallController addBallWithForce:force];
+}
+
 -(void) tick: (ccTime) dt
 {
     [theWorld updateWorld:dt];
@@ -57,10 +72,19 @@
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{	
-    b2Vec2 force;
-    force.Set(20.0f, 0.0f);
-    [theBallController addBallWithForce:force];
+{
+	UITouch * anyTouch = [touches anyObject];
+    CGPoint location = [self convertTouchToNodeSpace: anyTouch];
+    if ([theHandle hitTestWithPoint:location])
+        [theHandle handleTouch:location];
+}
+
+- (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	UITouch * anyTouch = [touches anyObject];
+    CGPoint location = [self convertTouchToNodeSpace: anyTouch];
+    if ([theHandle hitTestWithPoint:location])
+        [theHandle handleTouch:location];
 }
 
 - (void) dealloc

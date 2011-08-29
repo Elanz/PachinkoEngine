@@ -10,14 +10,18 @@
 
 @class WorldController;
 @class BallController;
+@class HandleController;
 
 @interface MainGameLayer : CCLayerColor
 {  
     WorldController * theWorld;
     BallController * theBallController;
+    HandleController * theHandle;
 }
 
 +(CCScene *) scene;
+
+- (void) launchBall;
 
 
 @end

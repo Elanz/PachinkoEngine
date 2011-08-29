@@ -146,7 +146,6 @@ enum {
 
 - (void) updateBalls
 {
-    NSLog(@"count = %d", [ballArray count]);
     [self updateCollision];
     [self cleanUp];
     [self updatePending];    
