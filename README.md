@@ -5,6 +5,8 @@ a very basic pachinko engine using box2d
 
 This is just the most basic ball physics and launcher for a pachinko style game.  Still it demonstrates all the concepts involved.
 
+http://www.200monkeys.com/index.php/2012/12/23/pachinko-engine-using-box2d-physics/
+
 
 This repository contains a copy of Cocos2d to ensure that you can build it, Cocos2d is covered by its own license, found here: http://www.cocos2d-iphone.org/wiki/doku.php/license
 
